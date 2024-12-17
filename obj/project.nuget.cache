@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8mbOJ6NSVEc=",
+  "dgSpecHash": "2hZRgX585wY=",
   "success": true,
-  "projectFilePath": "E:\\yazilim\\web\\DepoYönetimSistemi\\DepoYönetimSistemi.csproj",
+  "projectFilePath": "E:\\yazilim\\web\\DepoYonetimSistemi\\DepoYonetimSistemi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ACER\\.nuget\\packages\\google.apis\\1.68.0\\google.apis.1.68.0.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\google.apis.admin.directory.directory_v1\\1.68.0.3631\\google.apis.admin.directory.directory_v1.1.68.0.3631.nupkg.sha512",

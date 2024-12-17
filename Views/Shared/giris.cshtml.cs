@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace DepoYönetimSistemi.Views.Shared
+namespace DepoYonetimSistemi.Views.Shared
 {
     public class _LayoutModel : PageModel
     {

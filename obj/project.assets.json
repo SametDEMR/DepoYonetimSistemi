@@ -311,11 +311,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\yazilim\\web\\DepoYönetimSistemi\\DepoYönetimSistemi.csproj",
-      "projectName": "DepoYönetimSistemi",
-      "projectPath": "E:\\yazilim\\web\\DepoYönetimSistemi\\DepoYönetimSistemi.csproj",
+      "projectUniqueName": "E:\\yazilim\\web\\DepoYonetimSistemi\\DepoYonetimSistemi.csproj",
+      "projectName": "DepoYonetimSistemi",
+      "projectPath": "E:\\yazilim\\web\\DepoYonetimSistemi\\DepoYonetimSistemi.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "E:\\yazilim\\web\\DepoYönetimSistemi\\obj\\",
+      "outputPath": "E:\\yazilim\\web\\DepoYonetimSistemi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",

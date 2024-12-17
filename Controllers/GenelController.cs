@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-namespace DepoYönetimSistemi.Controllers
+namespace DepoYonetimSistemi.Controllers
 {
     public class GenelController : Controller
     {

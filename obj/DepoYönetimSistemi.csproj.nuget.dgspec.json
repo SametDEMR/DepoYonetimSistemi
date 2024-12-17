@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\yazilim\\web\\DepoYönetimSistemi\\DepoYönetimSistemi.csproj": {}
+    "E:\\yazilim\\web\\DepoYonetimSistemi\\DepoYönetimSistemi.csproj": {}
   },
   "projects": {
-    "E:\\yazilim\\web\\DepoYönetimSistemi\\DepoYönetimSistemi.csproj": {
+    "E:\\yazilim\\web\\DepoYonetimSistemi\\DepoYönetimSistemi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\yazilim\\web\\DepoYönetimSistemi\\DepoYönetimSistemi.csproj",
+        "projectUniqueName": "E:\\yazilim\\web\\DepoYonetimSistemi\\DepoYönetimSistemi.csproj",
         "projectName": "DepoYönetimSistemi",
-        "projectPath": "E:\\yazilim\\web\\DepoYönetimSistemi\\DepoYönetimSistemi.csproj",
+        "projectPath": "E:\\yazilim\\web\\DepoYonetimSistemi\\DepoYönetimSistemi.csproj",
         "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "E:\\yazilim\\web\\DepoYönetimSistemi\\obj\\",
+        "outputPath": "E:\\yazilim\\web\\DepoYonetimSistemi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DepoYönetimSistemi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4e3cb88a58f13443418efae72a22d04983eeb46")]
 [assembly: System.Reflection.AssemblyProductAttribute("DepoYönetimSistemi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DepoYönetimSistemi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

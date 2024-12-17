@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DepoYönetimSistemi.Controllers
+namespace DepoYonetimSistemi.Controllers
 {
     public class UrunController : Controller
     {

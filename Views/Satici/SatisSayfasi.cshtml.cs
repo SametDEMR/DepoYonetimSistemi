@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace DepoYönetimSistemi.Views.Satici
+namespace DepoYonetimSistemi.Views.Satici
 {
     public class SatisSayfasiModel : PageModel
     {

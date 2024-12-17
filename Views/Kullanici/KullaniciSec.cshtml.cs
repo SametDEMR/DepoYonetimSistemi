@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace DepoYönetimSistemi.Views.Home
+namespace DepoYonetimSistemi.Views.Home
 {
     public class KullaniciSecModel : PageModel
     {
