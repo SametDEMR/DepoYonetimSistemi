@@ -1,0 +1,29 @@
+﻿@{
+    if (User.IsInRole("Admin"))
+    {
+        Layout = "~/Views/Shared/AdminSayfalari.cshtml";
+    }
+    else if (User.IsInRole("Satici"))
+    {
+        Layout = "~/Views/Shared/SaticiSayfalari.cshtml";
+    }
+}
+
+<p>PROFİL</p>
+
+<button type="button" onclick="logout()">ÇIKIŞ YAP</button>
+
+<script>
+    function logout() {
+        fetch('/Genel/Cikis', {
+            method: 'POST' // Ya da GET kullanabilirsin, Controller'a göre ayarla
+        }).then(response => {
+            if (response.redirected) {
+                window.location.href = response.url; // Yönlendirme varsa
+            }
+        }).catch(error => console.error('Çıkış işlemi başarısız:', error));
+    }
+</script>
+
+
+

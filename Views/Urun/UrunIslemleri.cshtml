@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/AdminSayfalari.cshtml";
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ÜRÜN ADI</th>
+            <th>FİYATI</th>
+            <th>İşlem</th>
+            <th>Düzenle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Ekmek</td>
+            <td>1000</td>
+            <td><button onclick="window.location.href='@Url.Action("UrunDuzenle", "Urun")';">Sil</button></td>
+            <td><button onclick="window.location.href='@Url.Action("UrunDuzenle", "Urun")';">Düzenle</button></td>
+        </tr>
+    </tbody>
+</table>

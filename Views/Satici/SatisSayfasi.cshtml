@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/SaticiSayfalari.cshtml";
+}
+
+
+<form method="post">
+    <input type="text" id="id" placeholder=" URUN ID"><br><br>
+
+    <input type="text" id="ad" placeholder="URUN ADI"><br><br>
+
+    <input type="text" id="soyad" placeholder="MİKTAR"><br><br>
+
+    <button type="button" onclick="window.location.href='@Url.Action("AnaMenü", "Genel")';">
+        Satış işlemi
+    </button>
+</form>

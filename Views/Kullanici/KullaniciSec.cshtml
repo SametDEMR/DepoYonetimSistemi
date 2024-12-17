@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "~/Views/Shared/AdminSayfalari.cshtml";
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>E-posta</th>
+            <th>Ünvan</th>
+            <th>İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Ali</td>
+            <td>Yılmaz</td>
+            <td>ali@example.com</td>
+            <td>11</td>
+            <td><button onclick="window.location.href='@Url.Action("KullaniciDuzenle", "Kullanici")';">Düzenle</button></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Ayşe</td>
+            <td>Kara</td>
+            <td>ayse@example.com</td>
+            <td>22</td>
+            <td><button onclick="window.location.href='@Url.Action("KullaniciDuzenle", "Kullanici")';">Düzenle</button></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Mehmet</td>
+            <td>Çelik</td>
+            <td>mehmet@example.com</td>
+            <td>33</td>
+            <td><button onclick="window.location.href='@Url.Action("KullaniciDuzenle", "Kullanici")';">Düzenle</button></td>
+        </tr>
+    </tbody>
+</table>

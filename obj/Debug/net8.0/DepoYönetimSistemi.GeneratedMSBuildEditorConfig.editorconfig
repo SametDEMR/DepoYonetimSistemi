@@ -1,0 +1,83 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DepoYönetimSistemi
+build_property.RootNamespace = DepoYönetimSistemi
+build_property.ProjectDir = E:\yazilim\web\DepoYönetimSistemi\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = E:\yazilim\web\DepoYönetimSistemi
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/yazilim/web/DepoYönetimSistemi/Views/Genel/AnaMenü.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZWxcQW5hTWVuw7wuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/yazilim/web/DepoYönetimSistemi/Views/Genel/GirisSayfasi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZWxcR2lyaXNTYXlmYXNpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/yazilim/web/DepoYönetimSistemi/Views/Genel/Profil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZWxcUHJvZmlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/yazilim/web/DepoYönetimSistemi/Views/Genel/YetkisizErisim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZWxcWWV0a2lzaXpFcmlzaW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/yazilim/web/DepoYönetimSistemi/Views/Kullanici/KullaniciDuzenle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEt1bGxhbmljaUR1emVubGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/yazilim/web/DepoYönetimSistemi/Views/Kullanici/KullaniciEkle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEt1bGxhbmljaUVrbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/yazilim/web/DepoYönetimSistemi/Views/Kullanici/KullaniciIslemleri.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEt1bGxhbmljaUlzbGVtbGVyaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/yazilim/web/DepoYönetimSistemi/Views/Kullanici/KullaniciSec.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEt1bGxhbmljaVNlYy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/yazilim/web/DepoYönetimSistemi/Views/Satici/SatisSayfasi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2F0aWNpXFNhdGlzU2F5ZmFzaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/yazilim/web/DepoYönetimSistemi/Views/Shared/AdminSayfalari.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFkbWluU2F5ZmFsYXJpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/yazilim/web/DepoYönetimSistemi/Views/Shared/giris.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXGdpcmlzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/yazilim/web/DepoYönetimSistemi/Views/Shared/MisafirSayfalari.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE1pc2FmaXJTYXlmYWxhcmkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/yazilim/web/DepoYönetimSistemi/Views/Shared/SaticiSayfalari.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFNhdGljaVNheWZhbGFyaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/yazilim/web/DepoYönetimSistemi/Views/Urun/UrunDuzenle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXJ1blxVcnVuRHV6ZW5sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/yazilim/web/DepoYönetimSistemi/Views/Urun/UrunEkle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXJ1blxVcnVuRWtsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/yazilim/web/DepoYönetimSistemi/Views/Urun/UrunIslemleri.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXJ1blxVcnVuSXNsZW1sZXJpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 

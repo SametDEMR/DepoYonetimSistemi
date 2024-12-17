@@ -1,0 +1,13 @@
+﻿@{
+    if (User.IsInRole("Admin"))
+    {
+        Layout = "~/Views/Shared/AdminSayfalari.cshtml";
+    }
+    else if (User.IsInRole("Satici"))
+    {
+        Layout = "~/Views/Shared/SaticiSayfalari.cshtml";
+    }
+}
+
+<h1>DEPO YÖNETİM SİSTEMİ</h1>
+<p>Hoşgeldiniz. @ViewBag.Username</p>

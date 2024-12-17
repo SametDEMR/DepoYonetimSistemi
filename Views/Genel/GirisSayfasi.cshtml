@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/giris.cshtml";
+}
+
+<div class="container">
+
+    <form action="@Url.Action("GirisSayfasi", "Genel")" method="post">
+        <h1>DEPO YÖNETİM SİSTEMİ</h1>
+        <h1>GİRİŞ EKRANI</h1>
+        
+        <input type="text" name="username" id="username" placeholder="Kullanıcı Adı"><br><br>
+        <input type="password" name="password" id="password" placeholder="Şifre"><br><br>
+        <button type="submit">Gönder</button>
+    </form>
+</div>
