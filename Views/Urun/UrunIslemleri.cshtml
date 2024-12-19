@@ -1,24 +1,37 @@
-﻿@{
+﻿@model IEnumerable<DepoYonetimSistemi.Models.UrunDepo>
+
+@{
     Layout = "~/Views/Shared/AdminSayfalari.cshtml";
 }
+
+<h2>Ürün Listesi</h2>
 
 <table>
     <thead>
         <tr>
             <th>ID</th>
-            <th>ÜRÜN ADI</th>
-            <th>FİYATI</th>
-            <th>İşlem</th>
+            <th>Ürün Adı</th>
+            <th>Fiyatı</th>
+            <th>Stok Durumu</th>
+            <th>Depo Adı</th>
             <th>Düzenle</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Ekmek</td>
-            <td>1000</td>
-            <td><button onclick="window.location.href='@Url.Action("UrunDuzenle", "Urun")';">Sil</button></td>
-            <td><button onclick="window.location.href='@Url.Action("UrunDuzenle", "Urun")';">Düzenle</button></td>
-        </tr>
+        @foreach (var urun in Model)
+        {
+            <tr>
+                <td>@urun.ID</td>
+                <td>@urun.ad</td>
+                <td>@urun.fiyat</td>
+                <td>@urun.StokDurumu</td>
+                <td>@urun.DepoAdi</td>
+                <td>
+                    <button onclick="window.location.href='@Url.Action("UrunDuzenle", "Urun", new { id = urun.ID })';">
+                        Düzenle
+                    </button>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

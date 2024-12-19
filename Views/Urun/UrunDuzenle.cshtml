@@ -2,14 +2,36 @@
     Layout = "~/Views/Shared/AdminSayfalari.cshtml";
 }
 
-<form method="post">
-    <input type="text" id="id" placeholder="ID"><br><br>
+@model DepoYonetimSistemi.Models.UrunDepo
 
-    <input type="text" id="UrunAd" placeholder="Ürün Adı"><br><br>
+<form method="post" asp-action="UrunDuzenle" asp-controller="Urun">
+    <!-- Ürün ID (Sadece Görüntülenebilir) -->
+    <label for="id">Ürün ID:</label><br />
+    <input type="text" id="id" name="ID" value="@Model.ID" readonly><br><br>
 
-    <input type="text" id="Fiyat" placeholder="Fiyat"><br><br>
+    <!-- Ürün Adı -->
+    <label for="UrunAd">Ürün Adı:</label><br />
+    <input type="text" id="UrunAd" name="ad" value="@Model.ad" placeholder="Ürün Adı" required><br><br>
 
-    <button type="button" onclick="window.location.href='@Url.Action("UrunDuzenle", "Urun")';">
-        DEĞİŞTİR
-    </button>
+    <!-- Fiyat -->
+    <label for="Fiyat">Fiyat:</label><br />
+    <input type="number" id="Fiyat" name="fiyat" value="@Model.fiyat" placeholder="Fiyat" required><br><br>
+
+    <!-- Stok Durumu -->
+    <label for="StokDurumu">Stok Durumu:</label><br />
+    <input type="number" id="StokDurumu" name="StokDurumu" value="@Model.StokDurumu" placeholder="Stok Durumu" required><br><br>
+
+    <!-- Depo Adı -->
+    <label for="DepoAdi">Depo Adı:</label><br />
+    <select id="DepoAdi" name="DepoAdi">
+        <option value="Merkez" @(Model.DepoAdi == "Merkez" ? "selected" : "")>Merkez</option>
+        <option value="Ege" @(Model.DepoAdi == "Ege" ? "selected" : "")>Ege</option>
+        <option value="Akdeniz" @(Model.DepoAdi == "Akdeniz" ? "selected" : "")>Akdeniz</option>
+        <option value="Karadeniz" @(Model.DepoAdi == "Karadeniz" ? "selected" : "")>Karadeniz</option>
+        <option value="İç" @(Model.DepoAdi == "İç" ? "selected" : "")>İç</option>
+    </select><br><br>
+
+    <!-- Değiştir Butonu -->
+    <button type="submit">DEĞİŞTİR</button>
+    <button type="submit">SİL</button>
 </form>

@@ -46,9 +46,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Google.Apis.Admin.Directory.directory_v1": {
+            "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
-              "version": "[1.68.0.3631, )"
+              "version": "[8.0.2, )"
             }
           },
           "imports": [
