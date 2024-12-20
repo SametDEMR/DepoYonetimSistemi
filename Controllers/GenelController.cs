@@ -76,7 +76,6 @@ namespace DepoYonetimSistemi.Controllers
             {
                 var kullanicilist = _context.kullaniciroll.FirstOrDefault(k => k.ID == userIdInt);
                 return View(kullanicilist); // Kullanıcı bilgilerini View'e gönder
-                return View(kullanicilist);
             }
         }
 

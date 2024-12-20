@@ -33,5 +33,11 @@
 
     <!-- Değiştir Butonu -->
     <button type="submit">DEĞİŞTİR</button>
+</form>
+
+<!-- Sil Butonu Ayrı Form -->
+<form method="post" asp-action="UrunSil" asp-controller="Urun">
+    <input type="hidden" name="id" value="@Model.ID" />
     <button type="submit">SİL</button>
 </form>
+

@@ -1,6 +1,8 @@
 ﻿using DepoYonetimSistemi.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace DepoYonetimSistemi.Controllers
 {
@@ -38,11 +40,16 @@ namespace DepoYonetimSistemi.Controllers
             return View(urundepolist);
         }
 
-
-        [Authorize(Roles = "Admin")]
-        public IActionResult UrunSil()
+        
+        [HttpPost]
+        public IActionResult UrunSil(int id)
         {
-            return View();
+            if (id > 0)
+            {
+                _context.Database.ExecuteSqlInterpolated($"CALL AfterDeleteFromView {id}");
+            }
+            return RedirectToAction("UrunIslemleri"); // Listeleme sayfasına geri döner
         }
+
     }
 }
