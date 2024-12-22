@@ -46,7 +46,7 @@ namespace DepoYonetimSistemi.Controllers
         {
             if (id > 0)
             {
-                _context.Database.ExecuteSqlInterpolated($"CALL AfterDeleteFromView {id}");
+                _context.Database.ExecuteSqlInterpolated($"CALL AfterDeleteFromView({id});");
             }
             return RedirectToAction("UrunIslemleri"); // Listeleme sayfasına geri döner
         }

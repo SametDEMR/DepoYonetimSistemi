@@ -34,3 +34,9 @@ E:\yazilim\web\DepoYonetimSistemi\obj\Debug\net8.0\refint\DepoYonetimSistemi.dll
 E:\yazilim\web\DepoYonetimSistemi\obj\Debug\net8.0\DepoYonetimSistemi.pdb
 E:\yazilim\web\DepoYonetimSistemi\obj\Debug\net8.0\DepoYonetimSistemi.genruntimeconfig.cache
 E:\yazilim\web\DepoYonetimSistemi\obj\Debug\net8.0\ref\DepoYonetimSistemi.dll
+E:\yazilim\web\DepoYonetimSistemi\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+E:\yazilim\web\DepoYonetimSistemi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+E:\yazilim\web\DepoYonetimSistemi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\yazilim\web\DepoYonetimSistemi\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+E:\yazilim\web\DepoYonetimSistemi\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\yazilim\web\DepoYonetimSistemi\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
