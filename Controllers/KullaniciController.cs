@@ -28,6 +28,14 @@ namespace DepoYonetimSistemi.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
+        public ActionResult KullaniciEkleVeritaban(string ad, string soyad, string users, string mail)
+        {
+            _context.Database.ExecuteSqlInterpolated($"INSERT INTO kullanici(Isim, Soyisim, RolID, Mail) VALUES( {@ad}, {@soyad}, {@users}, {@mail})");
+
+            return View("KullaniciIslemleri");
+        }
+
 
         public IActionResult KullaniciSec()
         {
@@ -43,6 +51,16 @@ namespace DepoYonetimSistemi.Controllers
         {
             var kullanicilist = _context.kullaniciroll.SingleOrDefault(k => k.ID == id);
             return View(kullanicilist);
+        }
+
+        [HttpPost]
+        public IActionResult KullaniciSil(int id)
+        {
+            if (id > 0)
+            {
+                _context.Database.ExecuteSqlInterpolated($"DELETE FROM kullanici WHERE id = {id}");
+            }
+            return RedirectToAction("KullaniciIslemleri"); // Listeleme sayfasına geri döner
         }
     }
 }

@@ -3,23 +3,19 @@
 }
 
 
-<form action="@Url.Action("AdminAnaMenü", "Admin")" method="post">
-    <input type="text" id="id" placeholder="ID"><br><br>
+<form method="post" action="/Kullanici/KullaniciEkleVeritaban">
+    <input type="text" id="ad" name="ad" placeholder="Kullanıcı Adı"><br><br>
 
-    <input type="text" id="ad" placeholder="Kullanıcı Adı"><br><br>
+    <input type="text" id="soyad" name="soyad" placeholder="Şifre"><br><br>
 
-    <input type="text" id="soyad" placeholder="Şifre"><br><br>
-
-    <input type="text" id="eposta" placeholder="E-Posta"><br><br>
+    <input type="text" id="eposta" name="mail" placeholder="E-Posta"><br><br>
 
     <select id="users" name="users">
-        <option value="1">Misafir</option>
+        <option value="3">Misafir</option>
         <option value="2">Satıcı</option>
-        <option value="3">Admin</option>
+        <option value="1">Admin</option>
     </select><br><br>
 
-    <button type="button" onclick="window.location.href='@Url.Action("KullaniciEkle", "Kullanici")';">
-        DEĞİŞTİR
-    </button>
+    <button type="submit">Ekle</button>
 </form>
 

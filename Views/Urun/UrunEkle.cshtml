@@ -3,14 +3,20 @@
 }
 
 
-<form method="post">
-    <input type="text" id="id" placeholder="ID"><br><br>
+<form method="post" action="/Urun/UrunEkleVeritaban">
+    <input type="text" id="UrunAd" name="urunad" placeholder="Ürün Adı"><br><br>
 
-    <input type="text" id="UrunAd" placeholder="Ürün Adı"><br><br>
+    <input type="text" id="Fiyat" name="fiyat" placeholder="Fiyat"><br><br>
 
-    <input type="text" id="Fiyat" placeholder="Fiyat"><br><br>
+    <input type="text" id="StokDurumu" name="stok" placeholder="StokDurumu"><br><br>
 
-    <button type="button" onclick="window.location.href='@Url.Action("UrunDuzenle", "Urun")';">
-        Ekle
-    </button>
+    <select id="depoid" name="depoid">
+        <option value="1">MERKEZ</option>
+        <option value="2">EGE</option>
+        <option value="3">AKDENİZ</option>
+        <option value="4">KARADENİZ</option>
+        <option value="5">İÇ ANADOLU</option>
+    </select><br><br>
+
+    <button type="submit">Ekle</button>
 </form>

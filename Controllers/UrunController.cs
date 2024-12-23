@@ -32,6 +32,13 @@ namespace DepoYonetimSistemi.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
+        public IActionResult UrunEkleVeritaban(string urunad, string fiyat, string stok, string depoid)
+        {
+            _context.Database.ExecuteSqlInterpolated($"INSERT INTO urunler(Ad, Fiyat, StokDurumu, DepoID) VALUES( {@urunad}, {@fiyat}, {@stok}, {@depoid})");
+            return View("UrunEkle");
+        }
+
 
         [Authorize(Roles = "Admin")]
         public IActionResult UrunDuzenle(int id)
