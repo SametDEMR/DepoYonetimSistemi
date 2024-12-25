@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace DepoYonetimSistemi.Views.Urun
+namespace DepoYonetimSistemi.Views.Satici
 {
-    public class UrunDuzenleModel : PageModel
+    public class SatislarimSayfasiModel : PageModel
     {
         public void OnGet()
         {

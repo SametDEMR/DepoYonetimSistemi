@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Views/Shared/SaticiSayfalari.cshtml";
+}
+
+
+@model IEnumerable<DepoYonetimSistemi.Models.Satislar>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Kullanici ID</th>
+            <th>ÜRÜN ID</th>
+            <th>Miktar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var satis in Model)
+        {
+            <tr>
+                <td>@satis.ID</td>
+                <td>@satis.KullaniciID</td>
+                <td>@satis.UrunAdi</td>
+                <td>@satis.Miktar</td>
+            </tr>
+        }
+    </tbody>
+</table>

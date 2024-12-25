@@ -3,16 +3,36 @@
   "WorkspaceRootPath": "E:\\yazilim\\web\\DepoYonetimSistemi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|e:\\yazilim\\web\\depoyonetimsistemi\\views\\urun\\urunekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|solutionrelative:views\\urun\\urunekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|e:\\yazilim\\web\\depoyonetimsistemi\\controllers\\saticicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|solutionrelative:controllers\\saticicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|e:\\yazilim\\web\\depoyonetimsistemi\\controllers\\uruncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|solutionrelative:controllers\\uruncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|e:\\yazilim\\web\\depoyonetimsistemi\\views\\satici\\satisislemi.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|solutionrelative:views\\satici\\satisislemi.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|e:\\yazilim\\web\\depoyonetimsistemi\\controllers\\genelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|solutionrelative:controllers\\genelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|e:\\yazilim\\web\\depoyonetimsistemi\\models\\kullanici.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|solutionrelative:models\\kullanici.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|e:\\yazilim\\web\\depoyonetimsistemi\\views\\satici\\satislarimsayfasi.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|solutionrelative:views\\satici\\satislarimsayfasi.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|e:\\yazilim\\web\\depoyonetimsistemi\\models\\satislar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|solutionrelative:models\\satislar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|e:\\yazilim\\web\\depoyonetimsistemi\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|e:\\yazilim\\web\\depoyonetimsistemi\\views\\shared\\saticisayfalari.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|solutionrelative:views\\shared\\saticisayfalari.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|e:\\yazilim\\web\\depoyonetimsistemi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|e:\\yazilim\\web\\depoyonetimsistemi\\views\\shared\\adminsayfalari.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|solutionrelative:views\\shared\\adminsayfalari.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|e:\\yazilim\\web\\depoyonetimsistemi\\views\\shared\\saticisayfalari.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E5BB6FF5-5957-47F9-B6FC-03DAC14E4D9A}|DepoYonetimSistemi.csproj|solutionrelative:views\\shared\\saticisayfalari.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,17 +50,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "E:\\yazilim\\web\\DepoYonetimSistemi\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
               "ToolTip": "E:\\yazilim\\web\\DepoYonetimSistemi\\Data\\ApplicationDbContext.cs",
               "RelativeToolTip": "Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABWAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-19T12:02:01.695Z",
               "IsPinned": true,
@@ -52,39 +68,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\yazilim\\web\\DepoYonetimSistemi\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "E:\\yazilim\\web\\DepoYonetimSistemi\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAC0AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-11T14:48:32.726Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "AdminSayfalari.cshtml",
               "DocumentMoniker": "E:\\yazilim\\web\\DepoYonetimSistemi\\Views\\Shared\\AdminSayfalari.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\AdminSayfalari.cshtml",
               "ToolTip": "E:\\yazilim\\web\\DepoYonetimSistemi\\Views\\Shared\\AdminSayfalari.cshtml",
               "RelativeToolTip": "Views\\Shared\\AdminSayfalari.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAIBZwCcAAABTAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-12T09:30:24.914Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "SaticiSayfalari.cshtml",
               "DocumentMoniker": "E:\\yazilim\\web\\DepoYonetimSistemi\\Views\\Shared\\SaticiSayfalari.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\SaticiSayfalari.cshtml",
               "ToolTip": "E:\\yazilim\\web\\DepoYonetimSistemi\\Views\\Shared\\SaticiSayfalari.cshtml",
               "RelativeToolTip": "Views\\Shared\\SaticiSayfalari.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAIBZwBcAAABUAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACMAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-14T12:20:57.61Z",
               "IsPinned": true
@@ -98,29 +114,85 @@
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GenelController.cs",
+              "DocumentMoniker": "E:\\yazilim\\web\\DepoYonetimSistemi\\Controllers\\GenelController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GenelController.cs",
+              "ToolTip": "E:\\yazilim\\web\\DepoYonetimSistemi\\Controllers\\GenelController.cs",
+              "RelativeToolTip": "Controllers\\GenelController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwCwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T15:14:59.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Kullanici.cs",
+              "DocumentMoniker": "E:\\yazilim\\web\\DepoYonetimSistemi\\Models\\Kullanici.cs",
+              "RelativeDocumentMoniker": "Models\\Kullanici.cs",
+              "ToolTip": "E:\\yazilim\\web\\DepoYonetimSistemi\\Models\\Kullanici.cs",
+              "RelativeToolTip": "Models\\Kullanici.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T15:12:32.839Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UrunController.cs",
-              "DocumentMoniker": "E:\\yazilim\\web\\DepoYonetimSistemi\\Controllers\\UrunController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UrunController.cs",
-              "ToolTip": "E:\\yazilim\\web\\DepoYonetimSistemi\\Controllers\\UrunController.cs",
-              "RelativeToolTip": "Controllers\\UrunController.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAqwCYAAAAhAAAAAAAAAA==",
+              "Title": "SatisIslemi.cshtml",
+              "DocumentMoniker": "E:\\yazilim\\web\\DepoYonetimSistemi\\Views\\Satici\\SatisIslemi.cshtml",
+              "RelativeDocumentMoniker": "Views\\Satici\\SatisIslemi.cshtml",
+              "ToolTip": "E:\\yazilim\\web\\DepoYonetimSistemi\\Views\\Satici\\SatisIslemi.cshtml",
+              "RelativeToolTip": "Views\\Satici\\SatisIslemi.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-25T15:08:51.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SatislarimSayfasi.cshtml",
+              "DocumentMoniker": "E:\\yazilim\\web\\DepoYonetimSistemi\\Views\\Satici\\SatislarimSayfasi.cshtml",
+              "RelativeDocumentMoniker": "Views\\Satici\\SatislarimSayfasi.cshtml",
+              "ToolTip": "E:\\yazilim\\web\\DepoYonetimSistemi\\Views\\Satici\\SatislarimSayfasi.cshtml",
+              "RelativeToolTip": "Views\\Satici\\SatislarimSayfasi.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-25T15:05:47.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Satislar.cs",
+              "DocumentMoniker": "E:\\yazilim\\web\\DepoYonetimSistemi\\Models\\Satislar.cs",
+              "RelativeDocumentMoniker": "Models\\Satislar.cs",
+              "ToolTip": "E:\\yazilim\\web\\DepoYonetimSistemi\\Models\\Satislar.cs",
+              "RelativeToolTip": "Models\\Satislar.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T12:46:35.41Z",
+              "WhenOpened": "2024-12-25T15:04:00.573Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UrunEkle.cshtml",
-              "DocumentMoniker": "E:\\yazilim\\web\\DepoYonetimSistemi\\Views\\Urun\\UrunEkle.cshtml",
-              "RelativeDocumentMoniker": "Views\\Urun\\UrunEkle.cshtml",
-              "ToolTip": "E:\\yazilim\\web\\DepoYonetimSistemi\\Views\\Urun\\UrunEkle.cshtml",
-              "RelativeToolTip": "Views\\Urun\\UrunEkle.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-23T12:46:34.383Z",
+              "Title": "SaticiController.cs",
+              "DocumentMoniker": "E:\\yazilim\\web\\DepoYonetimSistemi\\Controllers\\SaticiController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SaticiController.cs",
+              "ToolTip": "E:\\yazilim\\web\\DepoYonetimSistemi\\Controllers\\SaticiController.cs",
+              "RelativeToolTip": "Controllers\\SaticiController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T12:10:36.77Z",
               "EditorCaption": ""
             }
           ]

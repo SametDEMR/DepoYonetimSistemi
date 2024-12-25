@@ -2,11 +2,9 @@
     Layout = "~/Views/Shared/AdminSayfalari.cshtml";
 }
 
-@model DepoYonetimSistemi.Models.KullaniciRoll
+@model DepoYonetimSistemi.Models.Kullanici
 
-<form method="post">
-    <input type="hidden" id="id" name="ID" value="@Model.ID"><br><br>
-
+<form method="post" action="/Kullanici/KullaniciDuzenleVeritaban">
     <input type="text" id="ad" name="Isim" placeholder="Kullanıcı Adı" value="@Model.Isim"><br><br>
 
     <input type="text" id="soyad" name="Soyisim" placeholder="Şifre" value="@Model.Soyisim"><br><br>
@@ -14,9 +12,9 @@
     <input type="text" id="eposta" name="Mail" placeholder="E-Posta" value="@Model.Mail"><br><br>
 
     <select id="users" name="RolAdi">
-        <option value="1" @(Model.RolAdi == "Misafir" ? "selected" : "")>Misafir</option>
-        <option value="2" @(Model.RolAdi == "Satıcı" ? "selected" : "")>Satıcı</option>
-        <option value="3" @(Model.RolAdi == "Admin" ? "selected" : "")>Admin</option>
+        <option value="1" @(Model.Rol.RolAdi == "Misafir" ? "selected" : "")>Misafir</option>
+        <option value="2" @(Model.Rol.RolAdi == "Satıcı" ? "selected" : "")>Satıcı</option>
+        <option value="3" @(Model.Rol.RolAdi == "Admin" ? "selected" : "")>Admin</option>
     </select><br><br>
 
     <button type="submit">DEĞİŞTİR</button>

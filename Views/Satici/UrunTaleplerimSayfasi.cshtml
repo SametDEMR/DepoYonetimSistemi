@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "~/Views/Shared/SaticiSayfalari.cshtml";
+}
+
+@model IEnumerable<DepoYonetimSistemi.Models.Talep>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ürün Adı</th>
+            <th>Miktar</th>
+            <th>Depo Adı</th>
+            <th>İşlemler</th> <!-- Yeni sütun -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var talep in Model)
+        {
+            <tr>
+                <td>@talep.TalepID</td>
+                <td>@talep.UrunAdi</td>
+                <td>@talep.Miktar</td>
+                <td>@talep.Depo.DepoAdi</td>
+                <td>
+                    <button onclick="window.location.href='@Url.Action("UrunTalepSil", "Satici", new { TalepID = talep.TalepID })';">
+                        Sil
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

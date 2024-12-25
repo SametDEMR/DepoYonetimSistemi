@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DepoYonetimSistemi.Models.UrunDepo>
+﻿@model IEnumerable<DepoYonetimSistemi.Models.Urun>
 
 @{
     Layout = "~/Views/Shared/AdminSayfalari.cshtml";
@@ -22,10 +22,10 @@
         {
             <tr>
                 <td>@urun.ID</td>
-                <td>@urun.ad</td>
-                <td>@urun.fiyat</td>
+                <td>@urun.Ad</td>
+                <td>@urun.Fiyat</td>
                 <td>@urun.StokDurumu</td>
-                <td>@urun.DepoAdi</td>
+                <td>@urun.Depo.DepoAdi</td>
                 <td>
                     <button onclick="window.location.href='@Url.Action("UrunDuzenle", "Urun", new { id = urun.ID })';">
                         Düzenle
@@ -35,3 +35,4 @@
         }
     </tbody>
 </table>
+

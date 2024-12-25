@@ -1,16 +1,38 @@
-﻿@{
+﻿@model IEnumerable<DepoYonetimSistemi.Models.Urun>
+
+@{
     Layout = "~/Views/Shared/SaticiSayfalari.cshtml";
 }
 
 
-<form method="post">
-    <input type="text" id="id" placeholder=" URUN ID"><br><br>
+<h2>Ürün Listesi</h2>
 
-    <input type="text" id="ad" placeholder="URUN ADI"><br><br>
-
-    <input type="text" id="soyad" placeholder="MİKTAR"><br><br>
-
-    <button type="button" onclick="window.location.href='@Url.Action("AnaMenü", "Genel")';">
-        Satış işlemi
-    </button>
-</form>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ürün Adı</th>
+            <th>Fiyatı</th>
+            <th>Stok Durumu</th>
+            <th>Depo Adı</th>
+            <th>Düzenle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var urun in Model)
+        {
+            <tr>
+                <td>@urun.ID</td>
+                <td>@urun.Ad</td>
+                <td>@urun.Fiyat</td>
+                <td>@urun.StokDurumu</td>
+                <td>@urun.Depo.DepoAdi</td>
+                <td>
+                    <button onclick="window.location.href='@Url.Action("SatisIslemi", "Satici", new { id = urun.ID })';">
+                        SAT
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

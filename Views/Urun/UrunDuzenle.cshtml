@@ -2,20 +2,16 @@
     Layout = "~/Views/Shared/AdminSayfalari.cshtml";
 }
 
-@model DepoYonetimSistemi.Models.UrunDepo
+@model DepoYonetimSistemi.Models.Urun
 
-<form method="post" asp-action="UrunDuzenle" asp-controller="Urun">
-    <!-- Ürün ID (Sadece Görüntülenebilir) -->
-    <label for="id">Ürün ID:</label><br />
-    <input type="text" id="id" name="ID" value="@Model.ID" readonly><br><br>
-
+<form method="post" action="/Urun/UrunDuzenleVeritaban">
     <!-- Ürün Adı -->
     <label for="UrunAd">Ürün Adı:</label><br />
-    <input type="text" id="UrunAd" name="ad" value="@Model.ad" placeholder="Ürün Adı" required><br><br>
+    <input type="text" id="UrunAd" name="ad" value="@Model.Ad" placeholder="Ürün Adı" required><br><br>
 
     <!-- Fiyat -->
     <label for="Fiyat">Fiyat:</label><br />
-    <input type="number" id="Fiyat" name="fiyat" value="@Model.fiyat" placeholder="Fiyat" required><br><br>
+    <input type="number" id="Fiyat" name="fiyat" value="@Model.Fiyat" placeholder="Fiyat" required><br><br>
 
     <!-- Stok Durumu -->
     <label for="StokDurumu">Stok Durumu:</label><br />
@@ -24,11 +20,11 @@
     <!-- Depo Adı -->
     <label for="DepoAdi">Depo Adı:</label><br />
     <select id="DepoAdi" name="DepoAdi">
-        <option value="Merkez" @(Model.DepoAdi == "Merkez" ? "selected" : "")>Merkez</option>
-        <option value="Ege" @(Model.DepoAdi == "Ege" ? "selected" : "")>Ege</option>
-        <option value="Akdeniz" @(Model.DepoAdi == "Akdeniz" ? "selected" : "")>Akdeniz</option>
-        <option value="Karadeniz" @(Model.DepoAdi == "Karadeniz" ? "selected" : "")>Karadeniz</option>
-        <option value="İç" @(Model.DepoAdi == "İç" ? "selected" : "")>İç</option>
+        <option value="1" @(Model.Depo.DepoAdi == "Merkez" ? "selected" : "")>Merkez</option>
+        <option value="2" @(Model.Depo.DepoAdi == "Ege" ? "selected" : "")>Ege</option>
+        <option value="3" @(Model.Depo.DepoAdi == "Akdeniz" ? "selected" : "")>Akdeniz</option>
+        <option value="4" @(Model.Depo.DepoAdi == "Karadeniz" ? "selected" : "")>Karadeniz</option>
+        <option value="5" @(Model.Depo.DepoAdi == "İç" ? "selected" : "")>İç</option>
     </select><br><br>
 
     <!-- Değiştir Butonu -->

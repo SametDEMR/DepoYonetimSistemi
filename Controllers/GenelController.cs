@@ -10,6 +10,12 @@ namespace DepoYonetimSistemi.Controllers
 {
     public class GenelController : Controller
     {
+        public IActionResult Misafir()
+        {
+            return View();
+        }
+
+
         private readonly ApplicationDbContext _context;
 
         public GenelController(ApplicationDbContext context)
@@ -20,8 +26,9 @@ namespace DepoYonetimSistemi.Controllers
         public async Task<IActionResult> GirisSayfasiAsync(string username)
         {
             // Veritabanından kullanıcıyı kontrol et
-            var user = await _context.kullaniciroll
-                .FirstOrDefaultAsync(u => u.Isim == username);
+            var user = _context.kullanici
+                .Include(k => k.Rol) // Rol bilgisini dahil ediyoruz
+                .FirstOrDefault(k => k.Isim == username); // Kullanıcının giriş bilgilerini kontrol ediyoruz
 
             if (user == null)
             {
@@ -29,23 +36,16 @@ namespace DepoYonetimSistemi.Controllers
                 return View();
             }
 
-            var model = new KullaniciRoll
-            {
-                ID = user.ID,
-                Isim = user.Isim,
-                Soyisim = user.Soyisim,
-                Mail = user.Mail,
-                RolAdi = user.RolAdi,
-            };
-
             // Kullanıcının rolünü al
-            string Kullaniciroll = user.RolAdi ?? "Unknown";
+            string KullaniciRoll = user.Rol.RolAdi ?? "Unknown";
 
             // Claims oluştur
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.Isim),
-                new Claim(ClaimTypes.Role, Kullaniciroll)
+                new Claim(ClaimTypes.Surname, user.Soyisim),
+                new Claim(ClaimTypes.Email, user.Mail),
+                new Claim(ClaimTypes.Role, KullaniciRoll) // Kullanıcının rolü
             };
 
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -55,6 +55,7 @@ namespace DepoYonetimSistemi.Controllers
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);
 
             return RedirectToAction("AnaMenü");
+
         }
 
 
@@ -69,12 +70,12 @@ namespace DepoYonetimSistemi.Controllers
 
             if (int.TryParse(userId, out int userIdInt))
             {
-                var kullanicilist = _context.kullaniciroll.FirstOrDefault(k => k.ID == userIdInt);
+                var kullanicilist = _context.kullanici.FirstOrDefault(k => k.ID == userIdInt);
                 return View(kullanicilist); // Kullanıcı bilgilerini View'e gönder
             }
             else
             {
-                var kullanicilist = _context.kullaniciroll.FirstOrDefault(k => k.ID == userIdInt);
+                var kullanicilist = _context.kullanici.FirstOrDefault(k => k.ID == userIdInt);
                 return View(kullanicilist); // Kullanıcı bilgilerini View'e gönder
             }
         }
