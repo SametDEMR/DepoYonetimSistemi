@@ -2,19 +2,21 @@
     Layout = "~/Views/Shared/AdminSayfalari.cshtml";
 }
 
-@model DepoYonetimSistemi.Models.Kullanici
+@model DepoYonetimSistemi.Models.KullaniciRoll
 
 <form method="post" action="/Kullanici/KullaniciDuzenleVeritaban">
-    <input type="text" id="ad" name="Isim" placeholder="Kullanıcı Adı" value="@Model.Isim"><br><br>
+    <input type="text" id="id" name="id" placeholder="Kullanıcı ID" value="@Model.ID"><br><br>
 
-    <input type="text" id="soyad" name="Soyisim" placeholder="Şifre" value="@Model.Soyisim"><br><br>
+    <input type="text" id="ad" name="ad" placeholder="Kullanıcı Adı" value="@Model.Isim"><br><br>
 
-    <input type="text" id="eposta" name="Mail" placeholder="E-Posta" value="@Model.Mail"><br><br>
+    <input type="text" id="soyad" name="soyad" placeholder="Şifre" value="@Model.Soyisim"><br><br>
 
-    <select id="users" name="RolAdi">
-        <option value="1" @(Model.Rol.RolAdi == "Misafir" ? "selected" : "")>Misafir</option>
-        <option value="2" @(Model.Rol.RolAdi == "Satıcı" ? "selected" : "")>Satıcı</option>
-        <option value="3" @(Model.Rol.RolAdi == "Admin" ? "selected" : "")>Admin</option>
+    <input type="text" id="eposta" name="eposta" placeholder="E-Posta" value="@Model.Mail"><br><br>
+
+    <select id="rolad" name="rolad">
+        <option value="3" @(Model.RolAdi == "Misafir" ? "selected" : "")>Misafir</option>
+        <option value="2" @(Model.RolAdi == "Satıcı" ? "selected" : "")>Satıcı</option>
+        <option value="1" @(Model.RolAdi == "Admin" ? "selected" : "")>Admin</option>
     </select><br><br>
 
     <button type="submit">DEĞİŞTİR</button>

@@ -39,7 +39,7 @@ namespace DepoYonetimSistemi.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult KullaniciSec()
         {
-            var kullaniciRollListesi = _context.kullanici.Include(u => u.Rol).ToList();
+            var kullaniciRollListesi = _context.KullaniciRoll.ToList();
             return View(kullaniciRollListesi);
         }
 
@@ -47,14 +47,14 @@ namespace DepoYonetimSistemi.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult KullaniciDuzenle(int id)
         {
-            var kullanicilist = _context.kullanici.Include(u => u.Rol).SingleOrDefault(k => k.ID == id);
+            var kullanicilist = _context.KullaniciRoll.SingleOrDefault(k => k.ID == id);
             return View(kullanicilist);
         }
 
         [Authorize(Roles = "Admin")]
-        public ActionResult KullaniciDuzenleVeritaban(int id, string Isim, string Soyisim, string Mail, string RolAdi)
+        public ActionResult KullaniciDuzenleVeritaban(int id, string ad, string soyad, string eposta, string rolad)
         {
-            _context.Database.ExecuteSqlInterpolated($"UPDATE kullanici SET Isim = {@Isim}, Soyisim = {@Soyisim}, RolID = {@RolAdi}, Mail = {@Mail} WHERE ID = {@id}");
+            _context.Database.ExecuteSqlInterpolated($"UPDATE kullanici SET Isim = {@ad}, Soyisim = {@soyad}, RolID = {@rolad}, Mail = {@eposta} WHERE ID = {@id}");
             return RedirectToAction("KullaniciIslemleri");
         }
 

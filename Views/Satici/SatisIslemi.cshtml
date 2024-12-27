@@ -1,21 +1,22 @@
-﻿@{
+﻿@model DepoYonetimSistemi.Models.UrunDepo
+
+@{
     Layout = "~/Views/Shared/SaticiSayfalari.cshtml";
 }
 
-@model DepoYonetimSistemi.Models.Urun
-
 <form method="post" action="/Satici/UrunSatVeritaban">
-    <p>@Model.ID</p>
+    <!-- Ürün ID -->
+    <input type="text" id="UrunId" name="UrunID" value="@Model.ID" required><br><br>
+
     <!-- Ürün Adı -->
-    <label for="UrunAd">@Model.Ad</label><br><br>
+    <input type="text" id="UrunAd" name="UrunAd" value="@Model.Ad" required><br><br>
 
     <!-- Fiyat -->
-    <label for="Fiyat">@Model.Fiyat TL</label><br><br>
+    <input type="text" id="Fiyat" name="Fiyat" value="@Model.Fiyat TL" required><br><br>
 
     <!-- Stok Durumu -->
-    <label for="SatisMiktari">Satış Miktarı:</label><br />
-    <input type="number" id="SatisMiktar" name="SatisMiktar" value="" placeholder="Satış Miktarı" required><br><br>
+    <input type="number" id="SatisMiktari" name="SatisMiktari" placeholder="Satış Miktarı" required><br><br>
 
-    <!-- Değiştir Butonu -->
+    <!-- Sat Butonu -->
     <button type="submit">Sat</button>
 </form>

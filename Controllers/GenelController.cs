@@ -2,14 +2,13 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using Microsoft.EntityFrameworkCore;
 using DepoYonetimSistemi.Data;
-using DepoYonetimSistemi.Models;
 
 namespace DepoYonetimSistemi.Controllers
 {
-    public class GenelController : Controller
+    public class GenelController : BaseController
     {
+
         public IActionResult Misafir()
         {
             return View();
@@ -26,9 +25,7 @@ namespace DepoYonetimSistemi.Controllers
         public async Task<IActionResult> GirisSayfasiAsync(string username)
         {
             // Veritabanından kullanıcıyı kontrol et
-            var user = _context.kullanici
-                .Include(k => k.Rol) // Rol bilgisini dahil ediyoruz
-                .FirstOrDefault(k => k.Isim == username); // Kullanıcının giriş bilgilerini kontrol ediyoruz
+            var user = _context.KullaniciRollDepo.FirstOrDefault(k => k.Isim == username); // Kullanıcının giriş bilgilerini kontrol ediyoruz
 
             if (user == null)
             {
@@ -37,7 +34,10 @@ namespace DepoYonetimSistemi.Controllers
             }
 
             // Kullanıcının rolünü al
-            string KullaniciRoll = user.Rol.RolAdi ?? "Unknown";
+            string KullaniciRoll = user.RolAdi ?? "Unknown";
+
+            HttpContext.Session.SetInt32("UserID", user.ID);
+            HttpContext.Session.SetInt32("DepoId", user.DepoID);
 
             // Claims oluştur
             var claims = new List<Claim>
@@ -66,18 +66,10 @@ namespace DepoYonetimSistemi.Controllers
 
         public IActionResult Profil()
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Kullanıcının ID'si
-
-            if (int.TryParse(userId, out int userIdInt))
-            {
-                var kullanicilist = _context.kullanici.FirstOrDefault(k => k.ID == userIdInt);
-                return View(kullanicilist); // Kullanıcı bilgilerini View'e gönder
-            }
-            else
-            {
-                var kullanicilist = _context.kullanici.FirstOrDefault(k => k.ID == userIdInt);
-                return View(kullanicilist); // Kullanıcı bilgilerini View'e gönder
-            }
+            int KullaniciID = GetLoggedInUserId().GetValueOrDefault();
+            var kullanicilist = _context.KullaniciRoll.Where(u => u.ID == @KullaniciID).ToList();
+            return View(kullanicilist);
+            
         }
 
         public IActionResult YetkisizErisim()

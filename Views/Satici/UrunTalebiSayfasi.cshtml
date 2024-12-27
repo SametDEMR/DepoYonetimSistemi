@@ -1,9 +1,17 @@
-﻿@{
+﻿@model IEnumerable<DepoYonetimSistemi.Models.UrunDepo>
+
+@{
     Layout = "~/Views/Shared/SaticiSayfalari.cshtml";
 }
 
+
 <form method="post" action="/Satici/SaticiUrunTalep">
-    <input type="text" id="UrunAd" name="urunad" placeholder="Ürün Adı"><br><br>
+    <select id="urunler" name="urunAd">
+        @foreach (var satis in Model)
+        {
+            <option value="@satis.Ad">@satis.Ad</option>
+        }
+    </select><br><br>
 
     <input type="number" id="Miktar" name="miktar" placeholder="Miktar"><br><br>
 

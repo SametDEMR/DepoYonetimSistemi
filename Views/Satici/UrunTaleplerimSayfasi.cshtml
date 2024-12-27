@@ -2,7 +2,7 @@
     Layout = "~/Views/Shared/SaticiSayfalari.cshtml";
 }
 
-@model IEnumerable<DepoYonetimSistemi.Models.Talep>
+@model IEnumerable<DepoYonetimSistemi.Models.TalepDepo>
 
 <table>
     <thead>
@@ -21,7 +21,7 @@
                 <td>@talep.TalepID</td>
                 <td>@talep.UrunAdi</td>
                 <td>@talep.Miktar</td>
-                <td>@talep.Depo.DepoAdi</td>
+                <td>@talep.DepoAdi</td>
                 <td>
                     <button onclick="window.location.href='@Url.Action("UrunTalepSil", "Satici", new { TalepID = talep.TalepID })';">
                         Sil

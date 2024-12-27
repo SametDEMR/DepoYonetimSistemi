@@ -22,7 +22,7 @@ namespace DepoYonetimSistemi.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult UrunIslemleri()
         {
-            var urundepolist = _context.urunler.Include(u => u.Depo).ToList();
+            var urundepolist = _context.UrunDepo.ToList();
             return View(urundepolist);
         }
 
@@ -57,15 +57,15 @@ namespace DepoYonetimSistemi.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult UrunDuzenle(int id)
         {
-            var urundepolist = _context.urunler.Include(u => u.Depo).SingleOrDefault(k => k.ID == id);
+            var urundepolist = _context.UrunDepo.SingleOrDefault(k => k.ID == id);
             return View(urundepolist);
         }
 
         [Authorize(Roles = "Admin")]
-        public IActionResult UrunDuzenleVeritaban(int id, string ad, int fiyat, int StokDurumu)
+        public IActionResult UrunDuzenleVeritaban(int ID, string UrunAd, int Fiyat, int StokDurumu)
         {
             // Veritabanında ürün güncelleme işlemi
-            _context.Database.ExecuteSqlInterpolated($"UPDATE urunler SET Ad = {@ad}, Fiyat = {@fiyat}, StokDurumu = {@StokDurumu} WHERE ID = {@id}");
+            _context.Database.ExecuteSqlInterpolated($"UPDATE urunler SET Ad = {@UrunAd}, Fiyat = {@Fiyat}, StokDurumu = {@StokDurumu} WHERE ID = {@ID}");
             return RedirectToAction("UrunIslemleri");
         }
 
@@ -75,7 +75,7 @@ namespace DepoYonetimSistemi.Controllers
         {
             if (id > 0)
             {
-                _context.Database.ExecuteSqlInterpolated($"CALL AfterDeleteFromView({id});");
+                _context.Database.ExecuteSqlInterpolated($"delete from urunler where ID = {id}");
             }
             return RedirectToAction("UrunIslemleri"); // Listeleme sayfasına geri döner
         }
@@ -83,11 +83,7 @@ namespace DepoYonetimSistemi.Controllers
 
         public IActionResult DepoUrunListe(string DepoAdi)
         {
-            var DepoIDAl = _context.depolar.SingleOrDefault(k => k.DepoAdi == DepoAdi);
-            var depoUrunListesi = _context.urunler
-                    .Include(u => u.Depo)
-                    .Where(k => k.DepoID == DepoIDAl.DepoID) // DepoID değerine erişiyoruz
-                    .ToList();
+            var depoUrunListesi = _context.UrunDepo.Where(k => k.DepoAdi == DepoAdi).ToList();
             return View(depoUrunListesi);
         }
 

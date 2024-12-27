@@ -1,4 +1,7 @@
-﻿@{
+﻿@model IEnumerable<DepoYonetimSistemi.Models.KullaniciRoll>
+
+
+@{
     if (User.IsInRole("Admin"))
     {
         Layout = "~/Views/Shared/AdminSayfalari.cshtml";
@@ -9,6 +12,12 @@
     }
 }
 
+
+@foreach (var item in Model)
+{
+       <p>@item.ID</p>
+       <p>@item.Isim</p>
+}
 <p>PROFİL</p>
 
 <button type="button" onclick="logout()">ÇIKIŞ YAP</button>
