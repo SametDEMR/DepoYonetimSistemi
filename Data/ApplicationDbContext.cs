@@ -45,5 +45,7 @@ namespace DepoYonetimSistemi.Data
 
         public DbSet<KullaniciRollDepo> KullaniciRollDepo { get; set; }
 
+        public DbSet<SearchUsers> SearchUsers { get; set; }
+
     }
 }

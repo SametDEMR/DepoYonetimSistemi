@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DepoYonetimSistemi.Data;
 using DepoYonetimSistemi.Models;
+using System.Linq;
 
 namespace DepoYonetimSistemi.Controllers
 {
@@ -37,11 +38,51 @@ namespace DepoYonetimSistemi.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        public IActionResult KullaniciSec()
+        public IActionResult KullaniciSec(int id)
         {
-            var kullaniciRollListesi = _context.KullaniciRoll.ToList();
-            return View(kullaniciRollListesi);
+            if (id == null)
+            {
+                return View(id);
+            }
+            else
+            {
+                var kullaniciRollListesi = _context.KullaniciRoll.ToList();
+                return View(kullaniciRollListesi);
+            }
         }
+
+        public ActionResult FiltreliKullanici(int ID, string Ad, string Soyad, string Rol, string Mail)
+        {
+            var kullanicilar = _context.KullaniciRoll.AsQueryable();
+
+            if (ID != 0)
+            {
+                kullanicilar = kullanicilar.Where(k => k.ID == ID);
+            }
+
+            if (!string.IsNullOrEmpty(Ad))
+            {
+                kullanicilar = kullanicilar.Where(k => k.Isim.Contains(Ad));
+            }
+
+            if (!string.IsNullOrEmpty(Soyad))
+            {
+                kullanicilar = kullanicilar.Where(k => k.Soyisim.Contains(Soyad));
+            }
+
+            if (!string.IsNullOrEmpty(Rol))
+            {
+                kullanicilar = kullanicilar.Where(k => k.RolAdi.Contains(Rol));
+            }
+
+            if (!string.IsNullOrEmpty(Mail))
+            {
+                kullanicilar = kullanicilar.Where(k => k.Mail.Contains(Mail));
+            }
+
+            return View(kullanicilar.ToList());
+        }
+
 
 
         [Authorize(Roles = "Admin")]
