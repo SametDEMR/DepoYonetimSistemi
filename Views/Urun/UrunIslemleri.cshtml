@@ -1,38 +1,4 @@
 ﻿@model IEnumerable<DepoYonetimSistemi.Models.UrunDepo>
 
-@{
-    Layout = "~/Views/Shared/AdminSayfalari.cshtml";
-}
-
-<h2>Ürün Listesi</h2>
-
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Ürün Adı</th>
-            <th>Fiyatı</th>
-            <th>Stok Durumu</th>
-            <th>Depo Adı</th>
-            <th>Düzenle</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var urun in Model)
-        {
-            <tr>
-                <td>@urun.ID</td>
-                <td>@urun.Ad</td>
-                <td>@urun.Fiyat</td>
-                <td>@urun.StokDurumu</td>
-                <td>@urun.DepoAdi</td>
-                <td>
-                    <button onclick="window.location.href='@Url.Action("UrunDuzenle", "Urun", new { id = urun.ID })';">
-                        Düzenle
-                    </button>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+@await Component.InvokeAsync("UrunListesi", Model)
 

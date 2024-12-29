@@ -25,10 +25,10 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("KullaniciIslemleri", "Kullanici")">KULLANICI İŞLEMLERİ</a>
+                            <a class="nav-link" href="@Url.Action("KullaniciIslemleri", "Kullanici")">KULLANICI İŞLEM</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("UrunIslemleri", "Urun")">ÜRÜN İŞLEMLERİ</a>
+                            <a class="nav-link" href="@Url.Action("UrunIslemleri", "Urun")">ÜRÜN İŞLEM</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="@Url.Action("UrunEkle", "Urun")">ÜRÜN EKLE</a>
@@ -36,12 +36,37 @@
                         <li class="nav-item">
                             <a class="nav-link" href="@Url.Action("Depolar", "Urun")">DEPOLAR</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("ToplamUrunFiyat", "Urun")">ÜRÜNLER VE FİYATLAR</a>
+                        </li>
                     </ul>
 
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("Profil", "Genel")">PROFİL</a>
+                            <button type="button" onclick="logout(event)">ÇIKIŞ YAP</button>
+
+                            <script>
+                                function logout(event) {
+                                    event.preventDefault(); // Varsayılan bağlantı davranışını engelle
+
+                                    fetch('/Genel/Cikis', {
+                                        method: 'POST' // Ya da GET kullanabilirsin, Controller'a göre ayarla
+                                    })
+                                        .then(response => {
+                                            if (response.redirected) {
+                                                window.location.href = response.url; // Yönlendirme varsa
+                                            } else if (response.ok) {
+                                                // Eğer yönlendirme yok ama başarılı bir yanıt döndüyse
+                                                console.log('Çıkış başarılı');
+                                            } else {
+                                                console.error('Çıkış işlemi başarısız:', response.status);
+                                            }
+                                        })
+                                        .catch(error => console.error('Çıkış işlemi başarısız:', error));
+                                }
+                            </script>
                         </li>
+
                     </ul>
                 </div>
             </div>

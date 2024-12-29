@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "~/Views/Shared/giris.cshtml";
+}
+
+
+<h1 align="center">@ViewBag.City Haritası</h1>
+<div id="map" style="height: 750px; width: 750px;"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var cityName = '@ViewBag.City';
+        var map = L.map('map').setView([51.505, -0.09], 13); // Default center
+
+        // OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        // Geocoding with Nominatim
+        fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${cityName}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.length > 0) {
+                    var lat = data[0].lat;
+                    var lon = data[0].lon;
+
+                    // Set the map view to the city
+                    map.setView([lat, lon], 12);
+
+                    // Add a marker to the city location
+                    L.marker([lat, lon]).addTo(map)
+                        .bindPopup(`${cityName}`)
+                        .openPopup();
+                } else {
+                    alert('Şehir bulunamadı.');
+                }
+            })
+            .catch(error => {
+                console.error('Geocode Error:', error);
+                alert('Geocode hatası oluştu.');
+            });
+    });
+</script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

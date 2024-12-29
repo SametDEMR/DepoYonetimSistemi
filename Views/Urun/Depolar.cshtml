@@ -4,9 +4,18 @@
     Layout = "~/Views/Shared/AdminSayfalari.cshtml";
 }
 
-@foreach (var depo in Model)
-{
-    <form action="/Urun/DepoUrunListe" method="post">
-        <button type="submit" name="DepoAdi" value="@depo.DepoAdi">@depo.DepoAdi</button><br><br>
-    </form>
-}
+
+<table>
+    <tbody>
+            <tr>
+                <td>
+                @foreach (var depo in Model)
+                {
+                    <form action="/Urun/DepoUrunListe" method="post">
+                        <button type="submit" name="DepoAdi" value="@depo.DepoAdi">@depo.DepoAdi</button><br><br>
+                    </form>
+                }
+                </td>
+            </tr>
+    </tbody>
+</table>

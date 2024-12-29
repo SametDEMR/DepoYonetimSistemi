@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DepoYonetimSistemi.Views.Genel
 {
-    public class ProfilModel : PageModel
+    public class HAritaSayfasiModel : PageModel
     {
         public void OnGet()
         {

@@ -9,8 +9,9 @@ namespace DepoYonetimSistemi.Controllers
     public class GenelController : BaseController
     {
 
-        public IActionResult Misafir()
+        public IActionResult HaritaSayfasi(string yer)
         {
+            @ViewBag.City = yer;
             return View();
         }
 
@@ -64,15 +65,12 @@ namespace DepoYonetimSistemi.Controllers
             return View();
         }
 
-        public IActionResult Profil()
+        public IActionResult YetkisizErisim()
         {
-            int KullaniciID = GetLoggedInUserId().GetValueOrDefault();
-            var kullanicilist = _context.KullaniciRoll.Where(u => u.ID == @KullaniciID).ToList();
-            return View(kullanicilist);
-            
+            return View();
         }
 
-        public IActionResult YetkisizErisim()
+        public IActionResult KarsilamaEkrani()
         {
             return View();
         }

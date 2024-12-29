@@ -33,7 +33,7 @@ namespace DepoYonetimSistemi.Controllers
             return View(urundepolist);
         }
 
-
+        [Authorize(Roles = "Satici")]
         [HttpPost]
         public IActionResult UrunSatVeritaban(int UrunID, int SatisMiktari, string UrunAd)
         {
@@ -68,7 +68,7 @@ namespace DepoYonetimSistemi.Controllers
 
         }
 
-
+        [Authorize(Roles = "Satici")]
         public IActionResult SatislarimSayfasi()
         {
             int KullaniciID = GetLoggedInUserId().GetValueOrDefault();
@@ -76,14 +76,14 @@ namespace DepoYonetimSistemi.Controllers
             return View(satislist);
         }
 
-
+        [Authorize(Roles = "Satici")]
         public IActionResult UrunTalebiSayfasi()
         {
             int DepoID = GetLoggedInDepoId().GetValueOrDefault();
             var depolist = _context.UrunDepo.Where(u => u.DepoID == DepoID).ToList();
             return View(depolist);
         }
-
+        [Authorize(Roles = "Satici")]
         public IActionResult SaticiUrunTalep(string UrunAd, int Miktar)
         {
             int DepoID = GetLoggedInDepoId().GetValueOrDefault();
@@ -94,7 +94,7 @@ namespace DepoYonetimSistemi.Controllers
 
         }
 
-        
+        [Authorize(Roles = "Satici")]
         public IActionResult UrunTaleplerimSayfasi()
         {
             int DepoID = GetLoggedInDepoId().GetValueOrDefault();
@@ -102,7 +102,7 @@ namespace DepoYonetimSistemi.Controllers
             return View(taleplist);
         }
 
-
+        [Authorize(Roles = "Satici")]
         public IActionResult UrunTalepSil(int TalepID)
         {
             _context.Database.ExecuteSqlInterpolated($"DELETE FROM talepler WHERE TalepID = {TalepID}");

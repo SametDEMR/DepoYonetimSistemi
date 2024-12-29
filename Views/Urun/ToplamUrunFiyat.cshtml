@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "~/Views/Shared/AdminSayfalari.cshtml";
+}
+
+@model IEnumerable<DepoYonetimSistemi.Models.ToplamFiyatMiktarAl>
+
+
+<table>
+    <tbody>
+        <tr>
+            @foreach (var kullanici in Model)
+            {
+                <td>Toplam Miktar: @kullanici.ToplamMiktar</td>
+                <br>
+                <br>
+                <td>Toplam Fiyat: @kullanici.ToplamFiyat</td>
+            }
+        </tr>
+    </tbody>
+</table>

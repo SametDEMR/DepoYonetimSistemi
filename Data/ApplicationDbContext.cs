@@ -23,6 +23,8 @@ namespace DepoYonetimSistemi.Data
             {
                 entity.HasNoKey();
             });
+
+            modelBuilder.Entity<ToplamFiyatMiktarAl>().HasNoKey();
         }
 
         public DbSet<Kullanici> kullanici { get; set; }
@@ -46,6 +48,8 @@ namespace DepoYonetimSistemi.Data
         public DbSet<KullaniciRollDepo> KullaniciRollDepo { get; set; }
 
         public DbSet<SearchUsers> SearchUsers { get; set; }
+
+        public DbSet<ToplamFiyatMiktarAl> ToplamFiyatMiktarAl { get; set; }
 
     }
 }

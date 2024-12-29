@@ -3,7 +3,7 @@ using DepoYonetimSistemi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-
+using Newtonsoft.Json;
 
 namespace DepoYonetimSistemi.Controllers
 {
@@ -26,6 +26,7 @@ namespace DepoYonetimSistemi.Controllers
             return View(urundepolist);
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Depolar()
         {
             var depolist = _context.depolar.ToList();
@@ -38,18 +39,11 @@ namespace DepoYonetimSistemi.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult UrunEkleVeritaban(string UrunAd, int Fiyat, int StokDurumu, int depoid)
         {
-            var urun = new Urun
-            {
-                Ad = UrunAd,
-                Fiyat = Fiyat,
-                StokDurumu = StokDurumu,
-                DepoID = depoid
-            };
 
-            _context.urunler.Add(urun);
-            _context.SaveChanges();
+            _context.Database.ExecuteSqlInterpolated($"CALL SPUrunEkle({UrunAd}, {Fiyat}, {StokDurumu}, {depoid});");
             return RedirectToAction("UrunIslemleri");
         }
 
@@ -69,7 +63,7 @@ namespace DepoYonetimSistemi.Controllers
             return RedirectToAction("UrunIslemleri");
         }
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult UrunSil(int id)
         {
@@ -80,11 +74,20 @@ namespace DepoYonetimSistemi.Controllers
             return RedirectToAction("UrunIslemleri"); // Listeleme sayfasına geri döner
         }
 
-
+        [Authorize(Roles = "Admin")]
         public IActionResult DepoUrunListe(string DepoAdi)
         {
             var depoUrunListesi = _context.UrunDepo.Where(k => k.DepoAdi == DepoAdi).ToList();
             return View(depoUrunListesi);
+        }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> ToplamUrunFiyat()
+        {
+            var veriler = await _context.ToplamFiyatMiktarAl
+        .FromSqlInterpolated($"CALL ToplamFiyatMiktarAl()")
+        .ToListAsync();
+            return View(veriler);
         }
 
     }

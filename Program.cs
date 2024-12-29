@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using DepoYonetimSistemi.Data;
+using Microsoft.Extensions.Caching.Memory;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +34,16 @@ var connectionString = builder.Configuration.GetConnectionString("MySqlConnectio
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 29))));
 
+// Add MemoryCache Service
+builder.Services.AddMemoryCache();
+
+// Add HTTP Client for API Integration
+builder.Services.AddHttpClient("UrunlerApi", client =>
+{
+    client.BaseAddress = new Uri("https://localhost:5001/"); // API'nin Base URL'i
+    client.DefaultRequestHeaders.Add("Accept", "application/json");
+});
+
 // Build the app
 var app = builder.Build();
 
@@ -58,6 +69,6 @@ app.UseSession();
 // Default route configuration
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Genel}/{action=GirisSayfasi}/{id?}");
+    pattern: "{controller=Genel}/{action=KarsilamaEkrani}/{id?}");
 
 app.Run();

@@ -30,9 +30,9 @@ namespace DepoYonetimSistemi.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        public ActionResult KullaniciEkleVeritaban(string ad, string soyad, string users, string mail)
+        public ActionResult KullaniciEkleVeritaban(string ad, string soyad, string users, string mail, int DepoID)
         {
-            _context.Database.ExecuteSqlInterpolated($"INSERT INTO kullanici(Isim, Soyisim, RolID, Mail) VALUES( {@ad}, {@soyad}, {@users}, {@mail})");
+            _context.Database.ExecuteSqlInterpolated($"CALL SPKullaniciEkle( {@ad}, {@soyad}, {@users}, {@mail}, {DepoID})");
 
             return View("KullaniciIslemleri");
         }
@@ -51,6 +51,8 @@ namespace DepoYonetimSistemi.Controllers
             }
         }
 
+
+        [Authorize(Roles = "Admin")]
         public ActionResult FiltreliKullanici(int ID, string Ad, string Soyad, string Rol, string Mail)
         {
             var kullanicilar = _context.KullaniciRoll.AsQueryable();
