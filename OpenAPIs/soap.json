@@ -1,0 +1,42 @@
+
+<definitions xmlns:tns="http://www.example.org/DepotService/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             name="DepotService"
+             targetNamespace="http://www.example.org/DepotService/">
+
+  <message name="getDataRequest">
+    <part name="args" type="xsd:string"/>
+  </message>
+
+  <message name="getDataResponse">
+    <part name="data" type="xsd:string"/>
+  </message>
+
+  <portType name="DepotPortType">
+    <operation name="getData">
+      <input message="tns:getDataRequest"/>
+      <output message="tns:getDataResponse"/>
+    </operation>
+  </portType>
+
+  <binding name="DepotBinding" type="tns:DepotPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getData">
+      <soap:operation soapAction="http://www.example.org/DepotService/getData"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+
+  <service name="DepotService">
+    <port name="DepotPort" binding="tns:DepotBinding">
+      <soap:address location="http://localhost:3000/soap"/>
+    </port>
+  </service>
+</definitions>
