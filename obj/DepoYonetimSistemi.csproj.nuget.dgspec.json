@@ -73,6 +73,10 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "SoapCore": {
+              "target": "Package",
+              "version": "[1.1.0.51, )"
             }
           },
           "imports": [

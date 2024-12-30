@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using DepoYonetimSistemi.DepotServices;
+using System.Net.Http;
 
 namespace DepoYonetimSistemi.Controllers
 {
@@ -21,17 +21,9 @@ namespace DepoYonetimSistemi.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        public async Task<ActionResult> UrunIslemleri()
+        public ActionResult UrunIslemleri()
         {
-            var client = new DepotServices();
-
-            // Servisten veri al
-            var response = client.getData(new getDataRequest());
-
-            // JSON verisini deserialize et
-            var data = Newtonsoft.Json.JsonConvert.DeserializeObject<List<UrunDepo>>(response.data);
-
-            // Veriyi View'e gönder
+            var data = _context.UrunDepo.ToList();
             return View(data);
         }
 
