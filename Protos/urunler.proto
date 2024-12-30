@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service UrunService {
+  rpc GetData(GetDataRequest) returns (GetDataResponse);
+}
+
+message GetDataRequest {
+  string args = 1; // Opsiyonel
+}
+
+message GetDataResponse {
+  string response = 1;
+}

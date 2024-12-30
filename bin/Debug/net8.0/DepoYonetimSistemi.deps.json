@@ -9,6 +9,8 @@
       "DepoYonetimSistemi/1.0.0": {
         "dependencies": {
           "Grpc.AspNetCore": "2.49.0",
+          "Grpc.Net.Client": "2.67.0",
+          "Grpc.Tools": "2.68.1",
           "Microsoft.EntityFrameworkCore": "8.0.11",
           "Microsoft.Extensions.ApiDescription.Client": "7.0.2",
           "NSwag.ApiDescription.Client": "13.18.2",
@@ -32,12 +34,12 @@
         "dependencies": {
           "Google.Protobuf": "3.21.5",
           "Grpc.AspNetCore.Server.ClientFactory": "2.49.0",
-          "Grpc.Tools": "2.49.0"
+          "Grpc.Tools": "2.68.1"
         }
       },
       "Grpc.AspNetCore.Server/2.49.0": {
         "dependencies": {
-          "Grpc.Net.Common": "2.49.0"
+          "Grpc.Net.Common": "2.67.0"
         },
         "runtime": {
           "lib/net7.0/Grpc.AspNetCore.Server.dll": {
@@ -58,32 +60,29 @@
           }
         }
       },
-      "Grpc.Core.Api/2.49.0": {
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
+      "Grpc.Core.Api/2.67.0": {
         "runtime": {
           "lib/netstandard2.1/Grpc.Core.Api.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.49.0.0"
+            "fileVersion": "2.67.0.0"
           }
         }
       },
-      "Grpc.Net.Client/2.49.0": {
+      "Grpc.Net.Client/2.67.0": {
         "dependencies": {
-          "Grpc.Net.Common": "2.49.0",
+          "Grpc.Net.Common": "2.67.0",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.2"
         },
         "runtime": {
-          "lib/net7.0/Grpc.Net.Client.dll": {
+          "lib/net8.0/Grpc.Net.Client.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.49.0.0"
+            "fileVersion": "2.67.0.0"
           }
         }
       },
       "Grpc.Net.ClientFactory/2.49.0": {
         "dependencies": {
-          "Grpc.Net.Client": "2.49.0",
+          "Grpc.Net.Client": "2.67.0",
           "Microsoft.Extensions.Http": "3.0.3"
         },
         "runtime": {
@@ -93,18 +92,18 @@
           }
         }
       },
-      "Grpc.Net.Common/2.49.0": {
+      "Grpc.Net.Common/2.67.0": {
         "dependencies": {
-          "Grpc.Core.Api": "2.49.0"
+          "Grpc.Core.Api": "2.67.0"
         },
         "runtime": {
-          "lib/net7.0/Grpc.Net.Common.dll": {
+          "lib/net8.0/Grpc.Net.Common.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.49.0.0"
+            "fileVersion": "2.67.0.0"
           }
         }
       },
-      "Grpc.Tools/2.49.0": {},
+      "Grpc.Tools/2.68.1": {},
       "Microsoft.EntityFrameworkCore/8.0.11": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Abstractions": "8.0.11",
@@ -334,7 +333,6 @@
           }
         }
       },
-      "System.Memory/4.5.3": {},
       "System.Numerics.Vectors/4.5.0": {},
       "System.Private.ServiceModel/4.8.1": {
         "dependencies": {
@@ -464,19 +462,19 @@
       "path": "grpc.aspnetcore.server.clientfactory/2.49.0",
       "hashPath": "grpc.aspnetcore.server.clientfactory.2.49.0.nupkg.sha512"
     },
-    "Grpc.Core.Api/2.49.0": {
+    "Grpc.Core.Api/2.67.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6OTcSQ8iML+xzmELhH4anUZlNM3dHDKPFBsMLSdiT80LJaaZKxwZml/K9ZdfLIjSR/EzdMZzzU2Avbedz4N7BA==",
-      "path": "grpc.core.api/2.49.0",
-      "hashPath": "grpc.core.api.2.49.0.nupkg.sha512"
+      "sha512": "sha512-cL1/2f8kc8lsAGNdfCU25deedXVehhLA6GXKLLN4hAWx16XN7BmjYn3gFU+FBpir5yJynvDTHEypr3Tl0j7x/Q==",
+      "path": "grpc.core.api/2.67.0",
+      "hashPath": "grpc.core.api.2.67.0.nupkg.sha512"
     },
-    "Grpc.Net.Client/2.49.0": {
+    "Grpc.Net.Client/2.67.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mLXxEJzqnRHseVzRCzSQznA7y8pcSStVbstLTUuQRulN7kREovh82ctNkGpkfwONi/DHoWscX9mJLiAmh0gjOQ==",
-      "path": "grpc.net.client/2.49.0",
-      "hashPath": "grpc.net.client.2.49.0.nupkg.sha512"
+      "sha512": "sha512-ofTjJQfegWkVlk5R4k/LlwpcucpsBzntygd4iAeuKd/eLMkmBWoXN+xcjYJ5IibAahRpIJU461jABZvT6E9dwA==",
+      "path": "grpc.net.client/2.67.0",
+      "hashPath": "grpc.net.client.2.67.0.nupkg.sha512"
     },
     "Grpc.Net.ClientFactory/2.49.0": {
       "type": "package",
@@ -485,19 +483,19 @@
       "path": "grpc.net.clientfactory/2.49.0",
       "hashPath": "grpc.net.clientfactory.2.49.0.nupkg.sha512"
     },
-    "Grpc.Net.Common/2.49.0": {
+    "Grpc.Net.Common/2.67.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-G0TVTS8fjCk8b7td/E7C8/ssJPm3JnGVBKsveoj/89PIwIee72qkXG+tVn5c1gwTanEFPdyPoydna/bmU/NAaw==",
-      "path": "grpc.net.common/2.49.0",
-      "hashPath": "grpc.net.common.2.49.0.nupkg.sha512"
+      "sha512": "sha512-gazn1cD2Eol0/W5ZJRV4PYbNrxJ9oMs8pGYux5S9E4MymClvl7aqYSmpqgmWAUWvziRqK9K+yt3cjCMfQ3x/5A==",
+      "path": "grpc.net.common/2.67.0",
+      "hashPath": "grpc.net.common.2.67.0.nupkg.sha512"
     },
-    "Grpc.Tools/2.49.0": {
+    "Grpc.Tools/2.68.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-fvA8M6m+cKR5cCwVfKNyUtC8/immoNiNGXW8rwLmwb4y4XRFtQJyN9dmGCJNh1mt0cb9LjSSiAZwmSfMgmE2Ng==",
-      "path": "grpc.tools/2.49.0",
-      "hashPath": "grpc.tools.2.49.0.nupkg.sha512"
+      "sha512": "sha512-BZ96s7ijKAhJoRpIK+pqCeLaGaSwyc5/CAZFwgCcBuAnkU2naYvH0P6qnYCkl0pWDY/JBOnE2RvX9IvRX1Yc5Q==",
+      "path": "grpc.tools/2.68.1",
+      "hashPath": "grpc.tools.2.68.1.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore/8.0.11": {
       "type": "package",
@@ -673,13 +671,6 @@
       "sha512": "sha512-B3+wwhAeoUQ6KeshWSq3IRLQiMoqPEzSHzyVyxTI/EbYuqIp90lXrRISlip2AF+5tj74ycIVPpnRY4M424HahA==",
       "path": "system.drawing.common/4.7.3",
       "hashPath": "system.drawing.common.4.7.3.nupkg.sha512"
-    },
-    "System.Memory/4.5.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
-      "path": "system.memory/4.5.3",
-      "hashPath": "system.memory.4.5.3.nupkg.sha512"
     },
     "System.Numerics.Vectors/4.5.0": {
       "type": "package",

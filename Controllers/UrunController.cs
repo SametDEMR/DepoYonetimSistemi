@@ -3,9 +3,8 @@ using DepoYonetimSistemi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
-using System.Net.Http;
-
+using System.Security.Policy;
+using System.Xml.Linq;
 namespace DepoYonetimSistemi.Controllers
 {
 
@@ -23,8 +22,48 @@ namespace DepoYonetimSistemi.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult UrunIslemleri()
         {
-            var data = _context.UrunDepo.ToList();
-            return View(data);
+            string url = "http://localhost:3000/soap?wsdl";
+            var soapRequest = @"<?xml version=""1.0"" encoding=""utf-8""?>
+                        <soapenv:Envelope xmlns:soapenv=""http://schemas.xmlsoap.org/soap/envelope/""
+                                          xmlns:tns=""http://example.com/soap"">
+                            <soapenv:Header/>
+                            <soapenv:Body>
+                                <tns:getData/>
+                            </soapenv:Body>
+                        </soapenv:Envelope>";
+
+            using (var client = new System.Net.Http.HttpClient())
+            {
+                var content = new System.Net.Http.StringContent(soapRequest, System.Text.Encoding.UTF8, "text/xml");
+                content.Headers.Add("SOAPAction", "getData");
+
+                var response = client.PostAsync(url, content).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseString = response.Content.ReadAsStringAsync().Result;
+
+                    // Yanıt XML formatında olduğu için önce parse ediyoruz
+                    var xmlResponse = XDocument.Parse(responseString);
+
+                    // "response" elementini güvenli bir şekilde al
+                    var dataElement = xmlResponse.Descendants()
+                                                 .FirstOrDefault(e => e.Name.LocalName == "response");
+
+                    if (dataElement == null || string.IsNullOrEmpty(dataElement.Value))
+                    {
+                        throw new Exception("SOAP yanıtında 'response' elementi bulunamadı veya boş.");
+                    }
+
+                    // JSON formatında gelen veriyi deserialize et
+                    var data = Newtonsoft.Json.JsonConvert.DeserializeObject<List<UrunDepo>>(dataElement.Value);
+
+                    return View(data); // View'a gönder
+                }
+                else
+                {
+                    throw new Exception($"SOAP isteği başarısız oldu: {response.ReasonPhrase}");
+                }
+            }
         }
 
         [Authorize(Roles = "Admin")]
