@@ -46,6 +46,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.29.2, )"
+            },
             "Grpc.AspNetCore": {
               "target": "Package",
               "version": "[2.49.0, )"
@@ -83,6 +87,10 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "RevStackCore.Redis.Client": {
+              "target": "Package",
+              "version": "[1.3.8, )"
             },
             "SoapCore": {
               "target": "Package",

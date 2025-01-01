@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Policy;
 using System.Xml.Linq;
+using StackExchange.Redis;
+
 namespace DepoYonetimSistemi.Controllers
 {
 
@@ -66,14 +68,37 @@ namespace DepoYonetimSistemi.Controllers
             }
         }
 
+
         [Authorize(Roles = "Admin")]
-        public IActionResult Depolar()
+        public IActionResult Depolar([FromServices] IConnectionMultiplexer redis)
         {
-            var depolist = _context.depolar.ToList();
+            // Redis bağlantısı üzerinden verileri alma
+            var db = redis.GetDatabase();
+            string cacheKey = "Depolar";
+
+            // Redis'ten önbellekteki veriyi al
+            string cachedDepolar = db.StringGet(cacheKey);
+
+            List<Depo> depolist;
+            if (!string.IsNullOrEmpty(cachedDepolar))
+            {
+                // Eğer önbellekte veri varsa deserialize et
+                depolist = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Depo>>(cachedDepolar);
+            }
+            else
+            {
+                // Ön bellekte yoksa veritabanından al
+                depolist = _context.depolar.ToList();
+
+                // Veriyi JSON formatında önbelleğe ekle (TTL: 5 dakika)
+                db.StringSet(cacheKey, Newtonsoft.Json.JsonConvert.SerializeObject(depolist), TimeSpan.FromMinutes(5));
+            }
+
             return View(depolist);
         }
 
-        [Authorize(Roles = "Admin")]
+
+    [Authorize(Roles = "Admin")]
         public IActionResult UrunEkle()
         {
             return View();

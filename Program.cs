@@ -11,19 +11,19 @@ builder.Services.AddControllersWithViews();
 // Add Session Configuration
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromMinutes(60); // Oturum süresi
-    options.Cookie.HttpOnly = true; // Güvenlik için sadece HTTP üzerinden eriþim
-    options.Cookie.IsEssential = true; // GDPR ve benzeri düzenlemeler için zorunlu
+    options.IdleTimeout = TimeSpan.FromMinutes(60); // Session timeout duration
+    options.Cookie.HttpOnly = true; // Restrict access to cookies via HTTP only
+    options.Cookie.IsEssential = true; // Mark as essential for GDPR compliance
 });
 
 // Add Authentication and Cookie Configuration
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
-        options.LoginPath = "/Genel/GirisSayfasi"; // Giriþ sayfasý
-        options.AccessDeniedPath = "/Genel/YetkisizErisim"; // Yetkisiz eriþim sayfasý
-        options.ExpireTimeSpan = TimeSpan.FromMinutes(60); // Çerez süresi
-        options.SlidingExpiration = true; // Otomatik çerez yenileme
+        options.LoginPath = "/Genel/GirisSayfasi"; // Login page path
+        options.AccessDeniedPath = "/Genel/YetkisizErisim"; // Access denied page path
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(60); // Cookie expiration duration
+        options.SlidingExpiration = true; // Enable sliding expiration
     });
 
 // Add Authorization
@@ -40,7 +40,7 @@ builder.Services.AddMemoryCache();
 // Add HTTP Client for API Integration
 builder.Services.AddHttpClient("UrunlerApi", client =>
 {
-    client.BaseAddress = new Uri("https://localhost:5001/"); // API'nin Base URL'i
+    client.BaseAddress = new Uri("https://localhost:5001/"); // API base URL
     client.DefaultRequestHeaders.Add("Accept", "application/json");
 });
 

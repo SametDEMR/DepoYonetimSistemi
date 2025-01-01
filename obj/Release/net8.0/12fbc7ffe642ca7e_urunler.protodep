@@ -1,0 +1,2 @@
+obj\Release\net8.0\Protos/Urunler.cs \
+obj\Release\net8.0\Protos/UrunlerGrpc.cs: Protos/urunler.proto

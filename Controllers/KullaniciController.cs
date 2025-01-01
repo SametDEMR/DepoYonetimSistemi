@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DepoYonetimSistemi.Data;
 using DepoYonetimSistemi.Models;
-using System.Linq;
+using System.Text.Json;
+using Grpc.Net.Client;
+using Grpc.Core;
 
 namespace DepoYonetimSistemi.Controllers
 {
@@ -46,8 +48,19 @@ namespace DepoYonetimSistemi.Controllers
             }
             else
             {
-                var kullaniciRollListesi = _context.KullaniciRoll.ToList();
-                return View(kullaniciRollListesi);
+                using var channel = GrpcChannel.ForAddress("http://localhost:50051"); // Servis adresini buraya yazın
+
+                // gRPC istemcisi oluştur
+                var client = new UrunService.UrunServiceClient(channel);
+
+                // İstek gönder
+                var request = new GetDataRequest { Args = id.ToString() ?? string.Empty };
+                var response = client.GetData(request);
+
+                var kullanicilar = JsonSerializer.Deserialize<IEnumerable<KullaniciRoll>>(response.Response);
+
+                // Modeli View'e gönder
+                return View(kullanicilar);
             }
         }
 
