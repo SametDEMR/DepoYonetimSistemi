@@ -7,6 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Shared\Components\NewFolder1\**" />
+    <Compile Remove="Views\Shared\Components\NewFolder\**" />
+    <Compile Remove="Views\Shared\Components\UrunListesi\**" />
+    <Content Remove="Views\Shared\Components\NewFolder1\**" />
+    <Content Remove="Views\Shared\Components\NewFolder\**" />
+    <Content Remove="Views\Shared\Components\UrunListesi\**" />
+    <EmbeddedResource Remove="Views\Shared\Components\NewFolder1\**" />
+    <EmbeddedResource Remove="Views\Shared\Components\NewFolder\**" />
+    <EmbeddedResource Remove="Views\Shared\Components\UrunListesi\**" />
+    <None Remove="Views\Shared\Components\NewFolder1\**" />
+    <None Remove="Views\Shared\Components\NewFolder\**" />
+    <None Remove="Views\Shared\Components\UrunListesi\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\ViewComponents.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\js\" />
   </ItemGroup>
 

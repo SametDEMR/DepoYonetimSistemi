@@ -82,8 +82,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFkbWluU2F5ZmFsYXJpLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/yazilim/web/DepoYonetimSistemi/Views/Shared/Components/UrunListesi/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVXJ1bkxpc3Rlc2lcRGVmYXVsdC5jc2h0bWw=
+[E:/yazilim/web/DepoYonetimSistemi/Views/Shared/Components/KullaniciListesi/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcS3VsbGFuaWNpTGlzdGVzaVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/yazilim/web/DepoYonetimSistemi/Views/Shared/giris.cshtml]

@@ -66,38 +66,21 @@ namespace DepoYonetimSistemi.Controllers
 
 
         [Authorize(Roles = "Admin")]
-        public ActionResult FiltreliKullanici(int ID, string Ad, string Soyad, string Rol, string Mail)
+        public ActionResult FiltreliKullanici(int? ID, string Ad, string Soyad, string Rol, string Mail)
         {
-            var kullanicilar = _context.KullaniciRoll.AsQueryable();
+            var kullanicilar = _context.KullaniciRoll
+                .Where(k =>
+                    (!ID.HasValue || k.ID == ID.Value) &&
+                    (string.IsNullOrEmpty(Ad) || k.Isim.Contains(Ad)) &&
+                    (string.IsNullOrEmpty(Soyad) || k.Soyisim.Contains(Soyad)) &&
+                    (string.IsNullOrEmpty(Rol) || k.RolAdi.Contains(Rol)) &&
+                    (string.IsNullOrEmpty(Mail) || k.Mail.Contains(Mail))
+                )
+                .ToList();
 
-            if (ID != 0)
-            {
-                kullanicilar = kullanicilar.Where(k => k.ID == ID);
-            }
-
-            if (!string.IsNullOrEmpty(Ad))
-            {
-                kullanicilar = kullanicilar.Where(k => k.Isim.Contains(Ad));
-            }
-
-            if (!string.IsNullOrEmpty(Soyad))
-            {
-                kullanicilar = kullanicilar.Where(k => k.Soyisim.Contains(Soyad));
-            }
-
-            if (!string.IsNullOrEmpty(Rol))
-            {
-                kullanicilar = kullanicilar.Where(k => k.RolAdi.Contains(Rol));
-            }
-
-            if (!string.IsNullOrEmpty(Mail))
-            {
-                kullanicilar = kullanicilar.Where(k => k.Mail.Contains(Mail));
-            }
-
-            return View(kullanicilar.ToList());
+            // Sonuçları view'a gönderiyoruz
+            return View(kullanicilar);
         }
-
 
 
         [Authorize(Roles = "Admin")]
