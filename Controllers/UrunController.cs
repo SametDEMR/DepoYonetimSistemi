@@ -3,9 +3,8 @@ using DepoYonetimSistemi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Policy;
 using System.Xml.Linq;
-using StackExchange.Redis;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace DepoYonetimSistemi.Controllers
 {
@@ -13,12 +12,15 @@ namespace DepoYonetimSistemi.Controllers
     public class UrunController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IMemoryCache _memoryCache;
 
-        public UrunController(ApplicationDbContext context)
+        public UrunController(ApplicationDbContext context, IMemoryCache memoryCache)
         {
             _context = context;
+            _memoryCache = memoryCache;
         }
 
+        
         [Authorize(Roles = "Admin")]
         public ActionResult UrunIslemleri()
         {
@@ -70,12 +72,25 @@ namespace DepoYonetimSistemi.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult Depolar()
         {
-            var depolist = _context.depolar.ToList();
+            string cacheKey = "DepoListesi";
+            if (!_memoryCache.TryGetValue(cacheKey, out List<Depo> depolist))
+            {
+                // Eğer cache'te yoksa, veritabanından al ve cache'e ekle
+                depolist = _context.depolar.ToList();
+
+                // Cache'e ekleme işlemi
+                var cacheEntryOptions = new MemoryCacheEntryOptions()
+                    .SetSlidingExpiration(TimeSpan.FromMinutes(30)) // 30 dakika boyunca erişilmezse silinir
+                    .SetAbsoluteExpiration(TimeSpan.FromHours(1));  // 1 saat sonra kesin olarak silinir
+
+                _memoryCache.Set(cacheKey, depolist, cacheEntryOptions);
+            }
+
             return View(depolist);
         }
 
 
-    [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public IActionResult UrunEkle()
         {
             return View();

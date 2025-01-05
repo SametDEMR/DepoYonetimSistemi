@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "~/Views/Shared/AdminSayfalari.cshtml";
+}
+
+
+@if (TempData["ResultMessage"] != null)
+{
+    if (TempData["ResultMessage"].ToString() == "1")
+    {
+        <p>TABLO SİLİNDİ.</p>
+    }
+    else if (TempData["ResultMessage"].ToString() == "0")
+    {
+        <p>TABLO İLİŞKİLİ OLDUĞU İÇİN SİLİNEMEDİ.</p>
+    }
+}
+
+
+
+<form action="@Url.Action("İliskiliSil", "Sil")" method="get">
+    <button type="submit">İlişkili Olan Tabloyu Sil</button><br><br>
+</form>
+
+<form action="@Url.Action("İliskisizSil", "Sil")" method="get">
+    <button type="submit">İlişkili Olmayan TABLO SİL</button>
+</form>

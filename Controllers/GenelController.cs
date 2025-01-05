@@ -24,6 +24,7 @@ namespace DepoYonetimSistemi.Controllers
             _context = context;
         }
 
+
         public async Task<IActionResult> GirisSayfasiAsync(string username)
         {
             // Veritabanından kullanıcıyı kontrol et
@@ -72,21 +73,23 @@ namespace DepoYonetimSistemi.Controllers
         }
 
 
-
         public IActionResult AnaMenü()
         {
             return View();
         }
+
 
         public IActionResult YetkisizErisim()
         {
             return View();
         }
 
+
         public IActionResult KarsilamaEkrani()
         {
             return View();
         }
+
 
         [HttpPost]
         public async Task<IActionResult> Cikis()

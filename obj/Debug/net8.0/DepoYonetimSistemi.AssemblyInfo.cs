@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DepoYonetimSistemi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b20f7c29c26514dd76dc014061ba311b4bc190dd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d120525b2f584e89c8c0e365e68eecace7d83d2e")]
 [assembly: System.Reflection.AssemblyProductAttribute("DepoYonetimSistemi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DepoYonetimSistemi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

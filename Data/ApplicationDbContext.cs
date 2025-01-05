@@ -25,6 +25,7 @@ namespace DepoYonetimSistemi.Data
             });
 
             modelBuilder.Entity<ToplamFiyatMiktarAl>().HasNoKey();
+            modelBuilder.Entity<Mesaj>().HasNoKey();
         }
 
         public DbSet<Kullanici> kullanici { get; set; }
@@ -51,5 +52,6 @@ namespace DepoYonetimSistemi.Data
 
         public DbSet<ToplamFiyatMiktarAl> ToplamFiyatMiktarAl { get; set; }
 
+        public DbSet<Mesaj> Mesaj { get; set; }
     }
 }
